@@ -1,22 +1,27 @@
 {
-    "parser": "@babel/eslint-parser",
+    "parser": "@typescript-eslint/parser",
     "extends": [
         "airbnb",
+        "airbnb-base",
+        "prettier",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
+        "plugin:jsx-a11y/recommended",
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/recommended"
     ],
-    "plugins": ["prettier", "react"],
+    "plugins": ["prettier", "react","@typescript-eslint", "import"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "env": {
         "browser": true,
         "node": true,
-        "es6": true,
+        "es2021": true,
         "jest": true
     },
     "rules": {
@@ -54,6 +59,35 @@
         "default-param-last": "off",
         "no-unused-vars": "warn",
         "no-nested-ternary": "warn",
-        "unused-imports/no-unused-imports": "off"
+        "unused-imports/no-unused-imports": "2",
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "classes": true,
+                "variables": true
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "classes": true,
+                "variables": true,
+                "typedefs": true
+            }
+        ]
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": "./tsconfig.json"
+            }
+        }
     }
 }
