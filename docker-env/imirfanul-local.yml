@@ -1,0 +1,18 @@
+version: "2.0"
+
+services:
+
+  #  schema application configuration
+
+  imirfanul-portfolio:
+    image: node:14-alpine
+    container_name: imirfanul-portfolio
+    restart: unless-stopped
+    ports:
+      - 6001:6001
+    volumes:
+      - /home/tanveer/Work/imirfanul:/app
+    working_dir: /app
+    command: sh -c "yarn install && yarn start"
+
+# End of schema application configuration
