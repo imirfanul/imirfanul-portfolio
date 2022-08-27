@@ -59,7 +59,7 @@
         "default-param-last": "off",
         "no-unused-vars": "warn",
         "no-nested-ternary": "warn",
-        "unused-imports/no-unused-imports": "2",
+        "unused-imports/no-unused-imports": 2,
         "no-use-before-define": [
             "error",
             {
