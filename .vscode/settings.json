@@ -23,5 +23,8 @@
         "javascript": "javascriptreact"
     },
     "prettier.endOfLine": "auto",
-    "prettier.trailingComma": "none"
+    "prettier.trailingComma": "none",
+    "[xml]": {
+        "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+    }
 }
