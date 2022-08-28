@@ -1,12 +1,10 @@
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
+import SLideInInterface from "../../Interfaces/SlideInInterface";
+import AnimationInterface from "../../Interfaces/AnimationInterface";
 
-interface ISLideIn {
-    children: ReactNode;
-    duration: Number;
-}
-
-const SlideIn: React.FC<ISLideIn> = ({ children, duration = 0.7 }) => {
+const SlideIn = (props: SLideInInterface) => {
+    const { children, duration } = props;
     const animations = {
         initial: { opacity: 0, x: 100 },
         animate: { opacity: 1, x: 0 },
